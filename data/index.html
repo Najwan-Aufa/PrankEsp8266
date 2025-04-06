@@ -21,9 +21,9 @@
     <script>
         document.getElementById("playAudio").addEventListener("click", function() {
             let audio = document.getElementById("laughSound");
-            audio.volume = 1.0;  // Set volume ke maksimal
+            audio.volume = 1.0;  
             
-            // Paksa browser untuk memutar audio tanpa blokir
+        
             let playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.then(() => {
