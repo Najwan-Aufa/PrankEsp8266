@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free WiFi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Selamat Datang Di WiFi Najwan</h2>
+    <button id="playAudio">Login</button>
+
+    <audio id="laughSound" src="laughx.mp3"></audio>
+
+    <script>
+        document.getElementById("playAudio").addEventListener("click", function() {
+            let audio = document.getElementById("laughSound");
+            audio.volume = 1.0;  // Set volume ke maksimal
+            
+            // Paksa browser untuk memutar audio tanpa blokir
+            let playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("Audio berhasil diputar");
+                }).catch(error => {
+                    console.log("Gagal memutar audio: " + error);
+                    alert("Silakan klik tombol lagi untuk terhubung Ke Wifi.");
+                });
+            }
+        });
+    </script>
+</body>
+</html>
